@@ -7,4 +7,5 @@ before_install:
   - docker build -t rs059/docker-react .
 
 script:
+  - 'bundle exec rake spec'
   - docker run -e CI=true rs059/docker-react npm run test -- --coverage
